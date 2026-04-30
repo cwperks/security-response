@@ -13,7 +13,7 @@ The SRT is the **operational** arm of OpenSearch security. It handles the day-to
 - Triage and validate reports, assign CVSS scores.
 - Create Draft GHSAs and reserve CVE IDs.
 - Assemble Fix Teams and coordinate private fix development.
-- Manage the [vulnerability tracking board](https://github.com/orgs/opensearch-project/projects/89/views/4).
+- Manage the vulnerability tracking board.
 - Negotiate embargo timelines with reporters.
 - Coordinate with release managers on patch timing.
 - Send pre-disclosure and public disclosure communications using the [comms templates](comms-templates/).
@@ -124,7 +124,8 @@ Membership follows the guidelines in the [TAGs README](https://github.com/opense
 | --- | --- | --- | --- |
 | New vulnerability report | Triages, scores, creates GHSA | — | — |
 | Medium/Low severity fix | Coordinates fix, publishes on next release | Reviews if needed | — |
-| Critical/High severity fix | Coordinates fix, requests out-of-band release | Recommends out-of-band release | Approves out-of-band release |
+| Critical severity fix | Coordinates fix, requests out-of-band release | Recommends out-of-band release | Approves out-of-band release |
+| High severity fix | Coordinates fix, consults TAG on release timing | Evaluates whether out-of-band is warranted | Approves if out-of-band recommended |
 | Policy change (e.g., embargo terms) | Proposes change | Reviews and advises | Approves |
 | Retrospective | Leads retrospective | Participates | — |
 

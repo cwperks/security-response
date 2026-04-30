@@ -28,7 +28,7 @@ You can also report directly through the **Security** tab on any `opensearch-pro
 3. Click **Report a vulnerability**.
 4. Fill in the form and submit.
 
-This creates a Draft GHSA visible only to the repository maintainers and `opensearch-admin`. The SRT will be notified and will follow up within **48 hours**.
+This creates a Draft GHSA visible only to the repository maintainers and [`opensearch-admin`](https://github.com/orgs/opensearch-project/teams/opensearch-admin). The SRT will be notified and will follow up within **48 hours**.
 
 > **Note**: You can also use the Security tab on this repository ([opensearch-project/security-response](https://github.com/opensearch-project/security-response)) if you are unsure which repository is affected.
 

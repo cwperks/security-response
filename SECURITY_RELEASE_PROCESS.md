@@ -22,7 +22,7 @@ See [INTAKE.md](INTAKE.md) for the full intake process.
 Within **48 hours** of receipt, an SRT member will:
 
 1. Acknowledge the report to the reporter.
-2. Create a tracking entry on the [vulnerability tracking board](https://github.com/orgs/opensearch-project/projects/89/views/4) with status **Triage**.
+2. Create a tracking entry on the vulnerability tracking board with status **Triage**.
 3. Assess whether the report is valid and determine the affected repository/component.
 
 ## 2. Triage
@@ -32,9 +32,11 @@ The SRT evaluates the report and assigns a severity using [CVSS 3.1](https://www
 | Severity | CVSS Score | Typical Response |
 | --- | --- | --- |
 | Critical | 9.0–10.0 | Out-of-band patch release |
-| High | 7.0–8.9 | Out-of-band patch release |
+| High | 7.0–8.9 | Out-of-band if next release is >4 weeks away; otherwise next scheduled release |
 | Medium | 4.0–6.9 | Next scheduled release |
 | Low | 0.1–3.9 | Next scheduled release |
+
+For Critical issues, an out-of-band release is expected regardless of effort. For High issues, the Security TAG evaluates whether the time-to-next-release justifies the cost of an out-of-band patch. Factors include active exploitation, availability of mitigations, and the current [patching effort constraints](https://github.com/opensearch-project/opensearch-build/issues/5720).
 
 The SRT will:
 
@@ -49,7 +51,7 @@ The SRT will:
 Once triage is complete, the SRT organizes a Fix Team:
 
 1. **Identify contributors**: The SRT identifies maintainers and contributors from the affected component who will develop the fix.
-2. **Request a temporary private fork**: An `opensearch-admin` member creates a temporary private fork from the Draft GHSA. The Fix Team members are added as collaborators. See [PRIVATE_FIX_GUIDELINES.md](PRIVATE_FIX_GUIDELINES.md).
+2. **Request a temporary private fork**: An [`opensearch-admin`](https://github.com/orgs/opensearch-project/teams/opensearch-admin) member creates a temporary private fork from the Draft GHSA. The Fix Team members are added as collaborators. See [PRIVATE_FIX_GUIDELINES.md](PRIVATE_FIX_GUIDELINES.md).
 3. **Develop the fix**: The Fix Team works in the private fork. All commits must follow the [commit message guidelines](PRIVATE_FIX_GUIDELINES.md#commit-message-hygiene) — no security-signaling language.
 4. **Review**: The fix is reviewed by at least one other maintainer of the affected component within the private fork.
 5. Update the tracking board status to **Pending Release**.
@@ -88,7 +90,14 @@ The project is working toward more flexible component-level patching — plugins
 
 ### Out-of-Band Releases
 
-For Critical and High severity issues, the Security TAG may recommend an out-of-band patch release to the [Technical Steering Committee (TSC)](https://github.com/opensearch-project/technical-steering-committee). An out-of-band release requires TSC sign-off.
+For Critical severity issues, the Security TAG will recommend an out-of-band patch release to the [Technical Steering Committee (TSC)](https://github.com/opensearch-project/technical-steering-committee). An out-of-band release requires TSC sign-off.
+
+For High severity issues, the Security TAG evaluates whether an out-of-band release is warranted based on:
+
+- **Time to next release**: If the next scheduled release is more than 4 weeks away, an out-of-band release is strongly recommended.
+- **Active exploitation**: Evidence of exploitation in the wild triggers an immediate out-of-band release regardless of severity.
+- **Mitigation availability**: If a configuration change or workaround effectively neutralizes the risk, the fix may ride the next scheduled release.
+- **Patching effort**: Full distribution patch releases currently require [significant coordination](https://github.com/opensearch-project/opensearch-build/issues/5720). The TAG weighs this cost against the risk of waiting.
 
 ### Release Day
 
@@ -162,7 +171,7 @@ GHSAs and CVEs are published only after patched artifacts (official binaries) ar
 
 ### Can we do a patch release just for a security fix?
 
-Out-of-band patch releases require a recommendation from the Security TAG and sign-off from the TSC. Today, patch releases are high-effort across the full distribution ([opensearch-build#5720](https://github.com/opensearch-project/opensearch-build/issues/5720)). For Critical and High severity issues, the SRT will push for an out-of-band release. For Medium and Low, fixes typically ride the next scheduled release.
+Out-of-band patch releases require a recommendation from the Security TAG and sign-off from the TSC. For Critical issues, an out-of-band release is expected. For High issues, the TAG evaluates whether the time-to-next-release, active exploitation, and mitigation availability justify the [patching effort](https://github.com/opensearch-project/opensearch-build/issues/5720). For Medium and Low, fixes ride the next scheduled release.
 
 ### Can a single plugin ship a security patch independently?
 
