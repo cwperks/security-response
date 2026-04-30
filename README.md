@@ -26,8 +26,6 @@ The SRT is the operational arm — it handles triage, fix coordination, and disc
 | --- | --- | --- |
 | Kunal Khatua | [@kkhatua](https://github.com/kkhatua) | Amazon |
 | Craig Perkins | [@cwperks](https://github.com/cwperks) | Amazon |
-| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
-| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Nils Bandener | [@nibix](https://github.com/nibix) | Eliatra |
 
 ## Security TAG

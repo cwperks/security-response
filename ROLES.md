@@ -36,14 +36,14 @@ Members may step down at any time and are encouraged to nominate a replacement. 
 | --- | --- | --- |
 | Kunal Khatua | [@kkhatua](https://github.com/kkhatua) | Amazon |
 | Craig Perkins | [@cwperks](https://github.com/cwperks) | Amazon |
-| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
-| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Nils Bandener | [@nibix](https://github.com/nibix) | Eliatra |
 
 ### Emeritus
 
 | Name | GitHub | Affiliation |
 | --- | --- | --- |
+| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
+| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Ryan Liang | [@RyanL1997](https://github.com/RyanL1997) | Amazon |
 | Varun Lodaya | [@varun-lodaya](https://github.com/varun-lodaya) | Amazon |
 | Andriy Redko | [@reta](https://github.com/reta) | Aiven |
