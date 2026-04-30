@@ -18,7 +18,7 @@ Embargo periods are negotiated on a case-by-case basis between the SRT and the r
 ### Adjustments
 
 - **Reporter requests a longer embargo**: The SRT will honor reasonable requests for extended timelines.
-- **Reporter requests accelerated disclosure**: The SRT will accommodate the reporter's preferred date, even if a fix is not yet ready.
+- **Reporter requests accelerated disclosure**: If a reporter intends to disclose on a timeline shorter than the SRT would prefer, the SRT will work to have a fix or mitigation ready by that date. The SRT cannot prevent a reporter from disclosing independently.
 - **Active exploitation in the wild**: The SRT will disclose immediately and release patches as soon as possible.
 - **Severity-based**: Low severity issues (CVSS < 4.0) may follow a relaxed timeline aligned with the next [scheduled release](https://opensearch.org/releases/).
 
