@@ -1,6 +1,6 @@
 # Vulnerability Intake Process
 
-This document describes how to report a security vulnerability in any [opensearch-project](https://github.com/opensearch-project) repository and how the SRT processes incoming reports.
+This document describes how to report a security vulnerability in any repository in the [OpenSearch organization](https://github.com/opensearch-project) and how the SRT processes incoming reports.
 
 ## How to Report
 
@@ -28,7 +28,7 @@ You can also report directly through the **Security** tab on any `opensearch-pro
 3. Click **Report a vulnerability**.
 4. Fill in the form and submit.
 
-This creates a Draft GHSA visible only to the repository maintainers and [`opensearch-admin`](https://github.com/orgs/opensearch-project/teams/opensearch-admin). The SRT will be notified and will follow up within **48 hours**.
+This creates a Draft GHSA visible only to the repository maintainers and OpenSearch organization administrators. The SRT will be notified and will follow up within **48 hours**.
 
 > **Note**: You can also use the Security tab on this repository ([opensearch-project/security-response](https://github.com/opensearch-project/security-response)) if you are unsure which repository is affected.
 
@@ -42,7 +42,7 @@ After your report is received:
 4. **CVE reservation**: The SRT reserves a CVE ID. GitHub's CNA will assign the CVE when the GHSA is published.
 5. **Embargo negotiation**: The SRT and reporter agree on an [embargo timeline](EMBARGO_POLICY.md).
 6. **Fix coordination**: The SRT assembles a Fix Team and begins the [private fix process](PRIVATE_FIX_GUIDELINES.md).
-7. **Tracking**: The issue is added to the [vulnerability tracking board](VULNERABILITY_TRACKING.md).
+7. **Tracking**: The issue is added to the private vulnerability tracking board.
 
 ## Requesting a GHSA or CVE for Your Repository
 
@@ -59,7 +59,7 @@ You do not need to be an SRT member to request this — any project maintainer c
 If the vulnerability is already publicly known (e.g., a CVE in a third-party dependency), no embargo is needed. You may:
 
 - Open a public GitHub issue on the affected repository.
-- The SRT will still track the fix on the [vulnerability tracking board](VULNERABILITY_TRACKING.md).
+- The SRT will still track the fix on the private vulnerability tracking board.
 
 ## Reporter Expectations
 

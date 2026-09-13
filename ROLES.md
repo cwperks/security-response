@@ -36,14 +36,15 @@ Members may step down at any time and are encouraged to nominate a replacement. 
 | --- | --- | --- |
 | Kunal Khatua | [@kkhatua](https://github.com/kkhatua) | Amazon |
 | Craig Perkins | [@cwperks](https://github.com/cwperks) | Amazon |
+| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
+| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Nils Bandener | [@nibix](https://github.com/nibix) | Eliatra |
+| Nagaraj G | [@nagarajg17](https://github.com/nagarajg17) | Amazon |
 
 ### Emeritus
 
 | Name | GitHub | Affiliation |
 | --- | --- | --- |
-| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
-| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Ryan Liang | [@RyanL1997](https://github.com/RyanL1997) | Amazon |
 | Varun Lodaya | [@varun-lodaya](https://github.com/varun-lodaya) | Amazon |
 | Andriy Redko | [@reta](https://github.com/reta) | Aiven |
@@ -87,37 +88,19 @@ Membership follows the guidelines in the [TAGs README](https://github.com/opense
 
 ## How the SRT and TAG Work Together
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                     Vulnerability Report                  │
-└──────────────────────┬───────────────────────────────────┘
-                       ▼
-              ┌─────────────────┐
-              │       SRT       │  Triage, CVSS, Draft GHSA,
-              │  (operational)  │  Fix Team, embargo, comms
-              └────────┬────────┘
-                       │
-          ┌────────────┼────────────────┐
-          ▼            ▼                ▼
-   Medium/Low    Critical/High    Policy questions
-   severity      severity
-          │            │                │
-          │            ▼                ▼
-          │   ┌─────────────────┐  ┌─────────────────┐
-          │   │  Security TAG   │  │  Security TAG   │
-          │   │  (advisory)     │  │  (advisory)     │
-          │   └────────┬────────┘  └────────┬────────┘
-          │            │                    │
-          │            ▼                    ▼
-          │   ┌─────────────────┐  ┌─────────────────┐
-          │   │      TSC        │  │      TSC        │
-          │   │ (out-of-band    │  │ (policy         │
-          │   │  release decision) │  approval)      │
-          │   └────────┬────────┘  └─────────────────┘
-          │            │
-          ▼            ▼
-   Next scheduled   Out-of-band
-   release          patch release
+```mermaid
+flowchart TD
+    report["Vulnerability report"] --> srt["SRT<br/>(operational)"]
+    srt --> low["Medium/Low severity"]
+    srt --> high["Critical/High severity"]
+    srt --> policy["Policy questions"]
+
+    low --> scheduled["Next scheduled release"]
+    high --> releaseTag["Security TAG<br/>(advisory)"]
+    releaseTag --> releaseTsc["TSC<br/>(out-of-band release decision)"]
+    releaseTsc --> outOfBand["Out-of-band patch release"]
+    policy --> policyTag["Security TAG<br/>(advisory)"]
+    policyTag --> policyTsc["TSC<br/>(policy approval)"]
 ```
 
 | Scenario | SRT | Security TAG | TSC |

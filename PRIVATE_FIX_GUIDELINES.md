@@ -6,7 +6,7 @@ This document explains how to develop security fixes privately using GitHub Secu
 
 Any maintainer or contributor who discovers or is assigned a security issue can request a Draft GHSA and temporary private fork. To do so:
 
-1. **Contact an [`opensearch-admin`](https://github.com/orgs/opensearch-project/teams/opensearch-admin) member** (via Slack DM or email to security@opensearch.org) with:
+1. **Contact an `opensearch-admin` member** (via Slack DM or email to security@opensearch.org) with:
    - The affected repository
    - A brief description of the issue
    - A list of GitHub usernames who need collaborator access to work on the fix (the "Fix Team")
@@ -20,6 +20,8 @@ Any maintainer or contributor who discovers or is assigned a security issue can 
 - The Draft GHSA serves as the central record for the vulnerability, including CVSS score, affected versions, and CVE ID.
 
 ## Working in the Private Fork
+
+An `opensearch-admin` member must create the temporary private fork and grant the Fix Team access. After they are added as collaborators, Fix Team members can perform the following steps:
 
 1. **Clone the private fork** using the URL provided in the Draft GHSA.
 2. **Create a feature branch** from the target release branch (e.g., `main` or a version branch).

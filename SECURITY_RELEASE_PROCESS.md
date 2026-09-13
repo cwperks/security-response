@@ -51,7 +51,7 @@ The SRT will:
 Once triage is complete, the SRT organizes a Fix Team:
 
 1. **Identify contributors**: The SRT identifies maintainers and contributors from the affected component who will develop the fix.
-2. **Request a temporary private fork**: An [`opensearch-admin`](https://github.com/orgs/opensearch-project/teams/opensearch-admin) member creates a temporary private fork from the Draft GHSA. The Fix Team members are added as collaborators. See [PRIVATE_FIX_GUIDELINES.md](PRIVATE_FIX_GUIDELINES.md).
+2. **Request a temporary private fork**: An `opensearch-admin` member creates a temporary private fork from the Draft GHSA. The Fix Team members are added as collaborators. See [PRIVATE_FIX_GUIDELINES.md](PRIVATE_FIX_GUIDELINES.md).
 3. **Develop the fix**: The Fix Team works in the private fork. All commits must follow the [commit message guidelines](PRIVATE_FIX_GUIDELINES.md#commit-message-hygiene) — no security-signaling language.
 4. **Review**: The fix is reviewed by at least one other maintainer of the affected component within the private fork.
 5. Update the tracking board status to **Pending Release**.
@@ -141,26 +141,15 @@ The SRT will determine the appropriate repo for disclosure during triage based o
 
 ## Summary Flowchart
 
-```
-┌─────────────┐
-│   Report     │  email or GitHub Security tab
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│   Triage     │  SRT confirms, scores CVSS, reserves CVE, creates Draft GHSA
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│  Private Fix │  temporary private fork, Fix Team develops and reviews
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│   Release    │  merge fix, build and publish patched version
-└──────┬──────┘
-       ▼
-┌─────────────┐
-│  Disclosure  │  publish GHSA/CVE, announce on forum/Slack/release notes
-└─────────────┘
+```mermaid
+flowchart TD
+    report["Report<br/>Email or GitHub Security tab"]
+    triage["Triage<br/>Confirm, score CVSS, reserve CVE, create Draft GHSA"]
+    fix["Private Fix<br/>Create temporary private fork; develop and review"]
+    release["Release<br/>Merge fix; build and publish patched version"]
+    disclosure["Disclosure<br/>Publish GHSA/CVE and public announcements"]
+
+    report --> triage --> fix --> release --> disclosure
 ```
 
 ## FAQ

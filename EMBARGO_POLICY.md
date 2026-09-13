@@ -8,9 +8,9 @@ An embargo is a period during which details of a vulnerability are kept confiden
 
 ## Embargo Timeline
 
-Embargo periods are negotiated on a case-by-case basis between the SRT and the reporter. The following are general guidelines:
+Embargo periods are negotiated on a case-by-case basis between the SRT and the reporter. The following targets are planning guidelines, not strict commitments or service-level guarantees:
 
-| Phase | Target Timeline |
+| Phase | Planning Target |
 | --- | --- |
 | Advisory sent to pre-disclosure list | Within 2 weeks of confirmed report |
 | Public disclosure | Within 4 weeks of pre-disclosure advisory |
@@ -72,7 +72,7 @@ The SRT will review applications and respond with a decision.
 
 ### Embargo Violations
 
-If a list member breaks embargo, the SRT will assess the impact and decide whether to accelerate disclosure. Repeated violations will result in removal from the pre-disclosure list.
+If a list member breaks embargo, the SRT will assess the impact, decide whether to accelerate disclosure, and determine whether to suspend or remove the member from the pre-disclosure list. A serious first violation or repeated violations will result in removal.
 
 ## References
 

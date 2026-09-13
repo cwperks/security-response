@@ -12,7 +12,6 @@ To report a vulnerability, email **security@opensearch.org** or use the **Securi
 | [Intake Process](INTAKE.md) | How to request a Draft GHSA or CVE for any OpenSearch repository |
 | [Private Fix Guidelines](PRIVATE_FIX_GUIDELINES.md) | Working with Draft GHSAs, temporary private forks, and commit message hygiene |
 | [Embargo Policy](EMBARGO_POLICY.md) | Embargo terms, timelines, and pre-disclosure list |
-| [Vulnerability Tracking](VULNERABILITY_TRACKING.md) | Tracking board workflow and status definitions |
 | [Roles and Responsibilities](ROLES.md) | SRT and Security TAG charter, membership, and how they interact |
 | [Comms Templates](comms-templates/) | Email, Slack, and forum templates for each stage of the process |
 
@@ -26,7 +25,10 @@ The SRT is the operational arm — it handles triage, fix coordination, and disc
 | --- | --- | --- |
 | Kunal Khatua | [@kkhatua](https://github.com/kkhatua) | Amazon |
 | Craig Perkins | [@cwperks](https://github.com/cwperks) | Amazon |
+| Shikhar Jain | [@shikharj05](https://github.com/shikharj05) | Amazon |
+| Gulshan Kumar | [@kumargu](https://github.com/kumargu) | Amazon |
 | Nils Bandener | [@nibix](https://github.com/nibix) | Eliatra |
+| Nagaraj G | [@nagarajg17](https://github.com/nagarajg17) | Amazon |
 
 ## Security TAG
 
